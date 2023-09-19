@@ -1,0 +1,48 @@
+.falling-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.falling-text-title {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease forwards;
+    margin: 8px 0;
+}
+.falling-text-subtitle {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.1s;
+    margin: 8px 0;
+}
+.falling-text-body {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 0.25s;
+    margin: 8px 0;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typeIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
