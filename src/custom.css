@@ -2,7 +2,7 @@
 :root {
     /* Define custom font sizes using CSS variables */
     --base-font-size: 24px;
-    --h1-font-size: 36px;
+    --h1-font-size: 32px;
     --h2-font-size: 32px;
     --h3-font-size: 28px;
     --span-font-size: 18px;
@@ -10,7 +10,7 @@
 
 /* Apply custom font sizes to elements */
 h1 {
-    font-family: "Mooli", sans-serif;
+    font-family: "Croissant One", cursive;
     font-size: var(--h1-font-size);
 }
 

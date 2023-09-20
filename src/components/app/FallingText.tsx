@@ -43,7 +43,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                     >
                         <img
                             src={image}
-                            className={`image hover:scale-105 transition-transform ${
+                            className={`image hover:scale-105 transition-transform drop-shadow-xl ${
                                 circle ? "rounded-full" : ""
                             }`}
                             alt={altText}

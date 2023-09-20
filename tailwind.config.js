@@ -7,9 +7,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: "#537A5A", // Custom primary color
+                primary: "#537A5A", // Fern Green
                 // secondary: "#FF8800", // Custom secondary color
-                secondary: "#537A5A", //Fern Green
+                secondary: "#B64624", //Blue
                 dark: "#28231C", //Dark greige
                 neutral: "#FAF6D1", //Cream
                 white: "#ffffff",
