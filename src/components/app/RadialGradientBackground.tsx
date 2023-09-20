@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "../../RadialGradientBackground.css";
 
 const RadialGradientBackground: React.FC = () => {
+    // Initialize the gradientStyle with a default position
     const [gradientStyle, setGradientStyle] = useState({
-        backgroundImage: "",
+        backgroundImage: `radial-gradient(circle at 50% 50%, #faebb6, #EDE7DE)`, // Default position
     });
 
     useEffect(() => {
@@ -17,7 +18,7 @@ const RadialGradientBackground: React.FC = () => {
 
             // Update the gradient style
             setGradientStyle({
-                backgroundImage: `radial-gradient(circle at ${gradientPosition}, #537A5A, #FAF6D1)`, //selection, outside
+                backgroundImage: `radial-gradient(circle at ${gradientPosition}, #faebb6, #EDE7DE)`, // Updated position
             });
         };
 

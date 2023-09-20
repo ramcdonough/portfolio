@@ -2,18 +2,20 @@ import React from "react";
 import FallingText from "../app/FallingText";
 
 function Profile() {
+    // Determine the imagePlacement based on screen width
+    const imagePlacement = window.innerWidth < 768 ? "center" : "left";
+
     return (
         <div className="flex justify-center h-screen">
-            <div className="m-5 p-5 md:w-1/2 sm:w-full text-sm text-primary">
+            <div className="md:mt-40 md:w-1/2 sm:w-full p-5 text-sm text-primary">
                 <FallingText
-                    title="about me"
-                    body="I'm a full-stack software developer proficient in
-                    JavaScript, TypeScript, Ruby, and Python, with a passion for
-                    transforming ideas into impactful and intuitive software
-                    experiences. I enjoy forming and contributing to a product's
-                    unqique personality in order to create something memorable.
-                    I enjoy creating responsive UI's that provide users with
-                    dynamic feedback."
+                    image="/images/avatar.jpg"
+                    imagePlacement="auto"
+                    imageSize={150}
+                    circle={true}
+                    title="Hello."
+                    body="I'm Ryan. A full-stack developer with a passion for creating engaging
+                    and impactful software experiences."
                 />
             </div>
         </div>

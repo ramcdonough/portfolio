@@ -4,7 +4,7 @@ import email from "../../svg/email.svg";
 
 export const Socials = () => {
     return (
-        <div className="flex place-content-center">
+        <div className="flex">
             <a
                 className="btn-ghost btn"
                 href="https://www.linkedin.com/in/ryan-mcdonough2/"

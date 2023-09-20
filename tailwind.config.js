@@ -3,19 +3,23 @@ const daisyui = require("daisyui");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-    content: [
-        "./src/**/*.{js,jsx,ts,tsx}", // Include your JavaScript and TypeScript files
-        "./public/index.html", // Include your HTML files
-    ],
+    content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
     theme: {
         extend: {
             colors: {
-                primary: "#b52c02", // Custom primary color
+                primary: "#537A5A", // Custom primary color
                 // secondary: "#FF8800", // Custom secondary color
                 secondary: "#537A5A", //Fern Green
                 dark: "#28231C", //Dark greige
                 neutral: "#FAF6D1", //Cream
                 white: "#ffffff",
+            },
+            fontSize: {
+                xs: "18px",
+                sm: "22px",
+                base: "28px",
+                lg: "32px",
+                xl: "40px",
             },
         },
     },
