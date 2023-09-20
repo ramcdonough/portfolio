@@ -36,9 +36,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                     <div
                         className="image-container md:mr-10 mb-8 mx-auto"
                         style={
-                            imageSize !== undefined
-                                ? { width: imageSize, height: imageSize }
-                                : {}
+                            imageSize !== undefined ? { width: imageSize } : {}
                         }
                     >
                         <img
@@ -68,6 +66,26 @@ const FallingText: React.FC<FallingTextProps> = ({
                     </div>
                 )}
             </div>
+            {image && imagePlacement == "right" && (
+                <div className="falling-text-image">
+                    <div
+                        className="image-container md:ml-10 mb-8 mx-auto"
+                        style={
+                            imageSize !== undefined
+                                ? { width: imageSize, height: imageSize }
+                                : {}
+                        }
+                    >
+                        <img
+                            src={image}
+                            className={`image hover:scale-105 transition-transform drop-shadow-xl ${
+                                circle ? "rounded-full" : ""
+                            }`}
+                            alt={altText}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
