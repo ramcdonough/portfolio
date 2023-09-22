@@ -12,7 +12,7 @@ import RadialGradientBackground from "./components/app/RadialGradientBackground"
 function App() {
     return (
         <Router>
-            <div className="App pb-10">
+            <div className="App pb-10 overflow-hidden">
                 <RadialGradientBackground />
                 <Nav />
                 <Routes>
