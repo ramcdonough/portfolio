@@ -4,20 +4,25 @@ import "../../FallingText.css";
 
 function Experience() {
     return (
-        <div className="flex justify-center h-screen">
-            <div className="md:mt-40 md:w-1/2 sm:w-full p-5 text-primary">
+        <div className="flex justify-center">
+            <div className="md:mt-20 md:w-2/3 sm:w-full px-5 text-primary">
                 <FallingText
                     image="/images/VisibleBodyLogo.png"
                     imagePlacement="left"
                     imageSize={300}
-                    circle={true}
-                    title="Software Developer"
-                    body="
-                    - Orchestrated agile development for a 250,000+ user base, boosting engagement and expanding product reach with Ruby on Rails.
-                    - Spearheaded JavaScript initiatives for improved UX and system performance, reducing redirects.
-                    - Elevated test coverage from 0% to 70%, enhancing product stability with Ruby, Capybara, and Selenium, and leveraged SQL insights to shape strategies and resolve issues."
+                    subtitle="Software Developer"
+                    subtitleDate="06/2021 - Current"
+                    body={[
+                        "Orchestrated the design, development, and deployment of small and large features for a user base of over 250,000 through agile methodologies with Ruby on Rails, expanding the user base and enhancing user engagement.",
+                        "Spearheaded a JavaScript initiative that significantly reduced redirects, elevating user experience and bolstering overall system performance.",
+                        "Amplified total test coverage from a baseline of 0% to 70%, utilizing Ruby with Capybara and Selenium, resulting in enhanced product stability and quality.",
+                        "Formulated and executed SQL queries to extract critical insights, pivotal in shaping organizational strategies and swiftly resolving support issues.",
+                        "Substantially contributed to the creation of an automated UI test suite using Python, streamlining testing procedures and fortifying product reliability.",
+                        "Collaborated in the conceptualization, structuring, and execution of a novel admin panel, complete with custom role and permission systems for precise user access management.",
+                        "Integrated software seamlessly with Canvas REST API, fostering efficient and seamless communication pathways.",
+                    ]}
                 />
-                <hr className="border-primary falling-text-body" />
+                {/* <hr className="border-primary falling-text-body" /> */}
             </div>
         </div>
     );

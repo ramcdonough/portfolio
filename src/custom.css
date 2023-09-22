@@ -1,10 +1,10 @@
 /* custom.css */
 :root {
     /* Define custom font sizes using CSS variables */
-    --base-font-size: 24px;
+    --base-font-size: 16px;
     --h1-font-size: 32px;
     --h2-font-size: 32px;
-    --h3-font-size: 28px;
+    --h3-font-size: 22px;
     --span-font-size: 18px;
 }
 
@@ -24,7 +24,11 @@ h3 {
     font-size: var(--h3-font-size);
     line-height: 1.2;
 }
-
+h4 {
+    font-family: "Mooli", sans-serif;
+    font-size: var(--h3-font-size);
+    line-height: 1.2;
+}
 body {
     font-family: "Mooli", sans-serif;
     font-size: var(--base-font-size);
@@ -33,4 +37,8 @@ body {
 p {
     font-family: "Mooli", sans-serif;
     font-size: var(--base-font-size);
+}
+span {
+    font-family: "Mooli", sans-serif;
+    font-size: var(--span-font-size);
 }

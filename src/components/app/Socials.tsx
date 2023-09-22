@@ -10,7 +10,7 @@ export const Socials: React.FC<SocialsProps> = ({ vertical = false }) => {
     return (
         <div className={`flex ${vertical ? "flex-col gap-32 " : ""} `}>
             <a
-                className="btn-ghost btn flex"
+                className="btn-ghost btn flex h-auto"
                 href="https://www.linkedin.com/in/ryan-mcdonough2/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -22,7 +22,7 @@ export const Socials: React.FC<SocialsProps> = ({ vertical = false }) => {
                 />
             </a>
             <a
-                className="btn-ghost btn flex"
+                className="btn-ghost btn flex h-auto"
                 href="mailto:McDonoughRyan95@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -34,7 +34,7 @@ export const Socials: React.FC<SocialsProps> = ({ vertical = false }) => {
                 />
             </a>
             <a
-                className="btn-ghost btn flex"
+                className="btn-ghost btn flex h-auto"
                 href="https://github.com/ramcdonough"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -14,7 +14,7 @@ export const Nav = () => {
                     </h1>
                 </Link>
             </div>
-            <nav className="md:gap-10 gap-7 sm:text-xs text-primary">
+            <nav className="md:gap-10 gap-0 sm:text-xs text-primary">
                 <NavLink
                     to="/"
                     className="btn btn-ghost md:hover:scale-105 transition-transform"
@@ -28,15 +28,32 @@ export const Nav = () => {
                     Experience
                 </NavLink>
                 <NavLink
-                    to="/contact"
+                    to="/projects"
                     className="btn btn-ghost md:hover:scale-105 transition-transform"
                 >
-                    Contact
+                    Projects
                 </NavLink>
+                <div
+                    className="md:navbar-end md:justify-end justify-center md:mr-5"
+                    id="contact-dropdown"
+                >
+                    <div className="dropdown dropdown-hover dropdown-end">
+                        <label
+                            tabIndex={0}
+                            className="m-auto btn btn-ghost text-primary md:hover:scale-105 transition-transform"
+                        >
+                            Contact
+                        </label>
+                        <ul
+                            tabIndex={0}
+                            className="dropdown-content z-[1] menu p-5 shadow rounded-box w-auto backdrop-blur-md bg-gray items-center gap-2 bg-white bg-opacity-25 font-bold"
+                        >
+                            McDonoughRyan95@gmail.com
+                            <Socials />
+                        </ul>
+                    </div>
+                </div>
             </nav>
-            <div className="navbar-end justify-center md:justify-end md:mr-5">
-                <Socials />
-            </div>
         </div>
     );
 };

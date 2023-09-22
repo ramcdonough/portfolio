@@ -4,7 +4,8 @@ import "../../FallingText.css";
 interface FallingTextProps {
     title?: string;
     subtitle?: string;
-    body?: string;
+    subtitleDate?: string;
+    body?: string | string[];
     image?: string;
     imagePlacement?: "center" | "left" | "right" | "auto";
     imageSize?: number;
@@ -14,6 +15,7 @@ interface FallingTextProps {
 const FallingText: React.FC<FallingTextProps> = ({
     title,
     subtitle,
+    subtitleDate,
     body,
     image,
     imagePlacement = "auto",
@@ -56,13 +58,32 @@ const FallingText: React.FC<FallingTextProps> = ({
                     </div>
                 )}
                 {subtitle && (
-                    <div className="falling-text-subtitle">
+                    <div
+                        className={`falling-text-subtitle flex ${
+                            body ? "font-bold" : ""
+                        }`}
+                    >
                         <h3>{subtitle}</h3>
+                        {subtitleDate && (
+                            <span className="ml-auto font-normal font-sm">
+                                {subtitleDate}
+                            </span>
+                        )}
                     </div>
                 )}
                 {body && (
                     <div className="falling-text-body">
-                        <h3>{body}</h3>
+                        {Array.isArray(body) ? (
+                            <ul>
+                                {body.map((item, index) => (
+                                    <li key={index} className="mb-2">
+                                        -{item}
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <body>{body}</body>
+                        )}
                     </div>
                 )}
             </div>

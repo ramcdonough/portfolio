@@ -14,7 +14,7 @@ function Profile() {
                     imageSize={150}
                     circle={true}
                     title="Hello. I'm Ryan."
-                    body="A full-stack software developer with a passion for crafting 
+                    subtitle="A full-stack software developer with a passion for crafting 
                     seamless digital experiences, from database architecture to polished front-end interfaces, 
                     to drive innovation and solve complex challenges."
                 />
