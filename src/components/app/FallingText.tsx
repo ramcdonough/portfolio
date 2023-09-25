@@ -31,7 +31,7 @@ const FallingText: React.FC<FallingTextProps> = ({
     }
 
     return (
-        <div className="flex-col lg:flex-row">
+        <div className="lg:flex">
             {image && imagePlacement !== "right" && (
                 <div className="falling-text-image">
                     <div

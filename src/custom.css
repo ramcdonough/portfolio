@@ -42,3 +42,13 @@ span {
     font-family: "Mooli", sans-serif;
     font-size: var(--span-font-size);
 }
+
+/* Override Daisy UI styles for center-aligned dropdown */
+.center-dropdown .dropdown-content {
+    position: absolute;
+    top: 100%; /* Place the dropdown below the button */
+    left: -120%; /* Center the dropdown horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    max-height: 200px; /* Set a maximum height for the dropdown if needed */
+    overflow-y: auto; /* Add scroll if the content exceeds the max height */
+}

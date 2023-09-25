@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { Socials } from "../../components/app/Socials";
+import "../../custom.css";
 
 export const Nav = () => {
     function toggleDrawer() {
@@ -107,7 +108,22 @@ export const Nav = () => {
                 className="md:navbar-end md:justify-end md:mr-5"
                 id="contact-dropdown"
             >
-                <div className="dropdown lg:dropdown-hover md:dropdown-end">
+                <div className="dropdown lg:dropdown-hover center-dropdown md:hidden">
+                    <label
+                        tabIndex={0}
+                        className="m-auto btn btn-xs md:btn-md btn-ghost text-primary lg:hover:scale-105 transition-transform"
+                    >
+                        Contact
+                    </label>
+                    <ul
+                        tabIndex={0}
+                        className="dropdown-content z-[1] menu p-5 shadow rounded-box w-auto backdrop-blur-md items-center gap-2 bg-white bg-opacity-25 font-bold text-black"
+                    >
+                        McDonoughRyan95@gmail.com
+                        <Socials />
+                    </ul>
+                </div>
+                <div className="dropdown lg:dropdown-hover hidden md:block md:dropdown-end">
                     <label
                         tabIndex={0}
                         className="m-auto btn btn-xs md:btn-md btn-ghost text-primary lg:hover:scale-105 transition-transform"
