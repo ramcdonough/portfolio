@@ -15,6 +15,7 @@ function App() {
             <div className="App pb-10 overflow-hidden">
                 <RadialGradientBackground />
                 <Nav />
+                <hr className="border-primary border-1 opacity-80 hidden lg:block" />
                 <Routes>
                     <Route path="/" element={<Profile />} />
                     <Route path="/contact" element={<Contact />} />

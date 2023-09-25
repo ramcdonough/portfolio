@@ -22,7 +22,6 @@ function Experience() {
                         "Integrated software seamlessly with Canvas REST API, fostering efficient and seamless communication pathways.",
                     ]}
                 />
-                {/* <hr className="border-primary falling-text-body" /> */}
             </div>
         </div>
     );

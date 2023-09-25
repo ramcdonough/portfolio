@@ -6,8 +6,24 @@ function Projects() {
         <div className="flex justify-center">
             <div className="lg:mt-20 md:w-2/3 sm:w-full px-5 text-primary">
                 <FallingText
-                    image="/images/NUWCLogo.png"
+                    image="/images/funtime_full_logo.png"
                     imagePlacement="left"
+                    imageSize={300}
+                    title="Funtime"
+                    subtitle="Collaborator"
+                    subtitleDate="2020-Current"
+                    link="https://www.play-funtime.com"
+                    body={[
+                        "Created a dynamic web application to manage a football 'pick'em' league with 65 weekly users.",
+                        "Integrated real-time game scores, team records, and logos by leveraging a sports feed RESTful API.",
+                        "Designed and built UI components",
+                        "Client - Next.js, Chakra UI, GraphQL",
+                        "Server - Node.js, GraphQL, Supabase (auth, postgress)",
+                    ]}
+                />
+                <FallingText
+                    image="/images/NUWCLogo.png"
+                    imagePlacement="right"
                     imageSize={300}
                     title="NUWC Employee Workflow Tool (Senior Project)"
                     subtitle="Scrum Master"
@@ -20,7 +36,6 @@ function Projects() {
                         "Engineered a dynamic system, empowering users to establish distinct groups, construct intricate workflows (multi-step company approval processes), and facilitate efficient document upload and download procedures.",
                     ]}
                 />
-                {/* <hr className="border-primary falling-text-body" /> */}
             </div>
         </div>
     );

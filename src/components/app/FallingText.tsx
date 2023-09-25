@@ -9,6 +9,7 @@ interface FallingTextProps {
     image?: string;
     imagePlacement?: "center" | "left" | "right" | "auto";
     imageSize?: number;
+    link?: string;
     circle?: boolean;
 }
 
@@ -20,6 +21,7 @@ const FallingText: React.FC<FallingTextProps> = ({
     image,
     imagePlacement = "auto",
     imageSize,
+    link,
     circle = false,
 }) => {
     let altText = image;
@@ -31,23 +33,33 @@ const FallingText: React.FC<FallingTextProps> = ({
     }
 
     return (
-        <div className="lg:flex">
+        <div className="lg:flex mb-10">
             {image && imagePlacement !== "right" && (
                 <div className="falling-text-image">
                     <div
-                        className="image-container lg:mr-10 mb-8 mx-auto lg:mx-0"
+                        className="image-container lg:mr-10 mb-5 mx-auto lg:mx-0"
                         style={
                             imageSize !== undefined ? { width: imageSize } : {}
                         }
                     >
                         <img
                             src={image}
-                            className={`image hover:scale-105 transition-transform drop-shadow-xl ${
+                            className={`image drop-shadow-xl ${
                                 circle ? "rounded-full" : ""
                             }`}
                             alt={altText}
                         />
                     </div>
+                    {link && (
+                        <a
+                            className="md:ml-3 ml-12"
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {link}
+                        </a>
+                    )}
                 </div>
             )}
             <div>
@@ -74,9 +86,10 @@ const FallingText: React.FC<FallingTextProps> = ({
                     <div className="falling-text-body font-semibold">
                         {Array.isArray(body) ? (
                             <ul>
+                                <hr className="border-primary my-2" />
                                 {body.map((item, index) => (
                                     <li key={index} className="mb-2">
-                                        -{item}
+                                        ● {item}
                                     </li>
                                 ))}
                             </ul>
@@ -98,9 +111,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                     >
                         <img
                             src={image}
-                            className={`image hover:scale-105 transition-transform drop-shadow-xl ${
-                                circle ? "rounded-full" : ""
-                            }`}
+                            className={`image ${circle ? "rounded-full" : ""}`}
                             alt={altText}
                         />
                     </div>

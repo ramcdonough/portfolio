@@ -39,7 +39,7 @@ export const Nav = () => {
                             ></path>
                         </svg>
                     </label>
-                    <h1 className="text-primary md:ml-5 font-semibold whitespace-nowrap">
+                    <h1 className="text-primary md:ml-5 font-semibold whitespace-nowrap ml-2">
                         Ryan McDonough
                     </h1>
                 </div>
@@ -48,8 +48,7 @@ export const Nav = () => {
                         htmlFor="my-drawer"
                         className="drawer-overlay"
                     ></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-primary opacity-90 backdrop-blur-xl drop-shadow-lg text-white">
-                        {/* Sidebar content here */}
+                    <ul className="menu p-4 w-60 pt-20 gap-5 min-h-full bg-primary text-neutral drop-shadow-lg">
                         <NavLink
                             to="/"
                             className="btn btn-ghost md:hover:scale-105 transition-transform"
