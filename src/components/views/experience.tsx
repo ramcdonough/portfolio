@@ -4,8 +4,8 @@ import "../../FallingText.css";
 
 function Experience() {
     return (
-        <div className="flex justify-center">
-            <div className="md:mt-20 md:w-2/3 sm:w-full px-5 text-primary">
+        <div className="flex justify-center px-3">
+            <div className="lg:mt-20 md:w-2/3 sm:w-full px-5 text-primary">
                 <FallingText
                     image="/images/VisibleBodyLogo.png"
                     imagePlacement="left"

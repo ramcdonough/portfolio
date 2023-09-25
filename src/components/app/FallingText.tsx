@@ -31,12 +31,11 @@ const FallingText: React.FC<FallingTextProps> = ({
     }
 
     return (
-        //center not working properly
-        <div className="sm:flex md:flex-row">
+        <div className="flex-col lg:flex-row">
             {image && imagePlacement !== "right" && (
                 <div className="falling-text-image">
                     <div
-                        className="image-container md:mr-10 mb-8 mx-auto"
+                        className="image-container lg:mr-10 mb-8 mx-auto lg:mx-0"
                         style={
                             imageSize !== undefined ? { width: imageSize } : {}
                         }
@@ -72,7 +71,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                     </div>
                 )}
                 {body && (
-                    <div className="falling-text-body">
+                    <div className="falling-text-body font-semibold">
                         {Array.isArray(body) ? (
                             <ul>
                                 {body.map((item, index) => (

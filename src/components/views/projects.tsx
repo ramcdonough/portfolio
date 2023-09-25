@@ -4,12 +4,12 @@ import FallingText from "../app/FallingText";
 function Projects() {
     return (
         <div className="flex justify-center">
-            <div className="md:mt-20 md:w-2/3 sm:w-full px-5 text-primary">
+            <div className="lg:mt-20 md:w-2/3 sm:w-full px-5 text-primary">
                 <FallingText
                     image="/images/NUWCLogo.png"
                     imagePlacement="left"
                     imageSize={300}
-                    title="NUWC Employee Workflow Tool"
+                    title="NUWC Employee Workflow Tool (Senior Project)"
                     subtitle="Scrum Master"
                     subtitleDate="Sept 2019 - April 2020"
                     body={[

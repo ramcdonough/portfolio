@@ -12,7 +12,7 @@ export const Nav = () => {
     }
 
     return (
-        <div className="navbar flex flex-col md:flex-row sm:flex-col my-2">
+        <div className="navbar flex flex-col md:flex-row flex-col my-2">
             <div className="drawer flex lg:hidden">
                 <input
                     id="my-drawer"
@@ -38,7 +38,7 @@ export const Nav = () => {
                             ></path>
                         </svg>
                     </label>
-                    <h1 className="text-primary md:ml-5 font-semibold">
+                    <h1 className="text-primary md:ml-5 font-semibold whitespace-nowrap">
                         Ryan McDonough
                     </h1>
                 </div>
@@ -107,10 +107,10 @@ export const Nav = () => {
                 className="md:navbar-end md:justify-end md:mr-5"
                 id="contact-dropdown"
             >
-                <div className="dropdown lg:dropdown-hover lg:dropdown-end">
+                <div className="dropdown lg:dropdown-hover md:dropdown-end">
                     <label
                         tabIndex={0}
-                        className="m-auto btn btn-ghost text-primary lg:hover:scale-105 transition-transform"
+                        className="m-auto btn btn-xs md:btn-md btn-ghost text-primary lg:hover:scale-105 transition-transform"
                     >
                         Contact
                     </label>
@@ -124,60 +124,5 @@ export const Nav = () => {
                 </div>
             </div>
         </div>
-
-        // <div className="drawer">
-        //     <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        //     <div className="drawer-content flex flex-col">
-        //         <div className="w-full navbar">
-        //             <div className="flex-none lg:hidden">
-        //                 <label
-        //                     htmlFor="my-drawer-3"
-        //                     className="btn btn-square btn-ghost"
-        //                 >
-        //                     <svg
-        //                         xmlns="http://www.w3.org/2000/svg"
-        //                         fill="none"
-        //                         viewBox="0 0 24 24"
-        //                         className="inline-block w-6 h-6 stroke-current"
-        //                     >
-        //                         <path
-        //                             strokeLinecap="round"
-        //                             strokeLinejoin="round"
-        //                             strokeWidth="2"
-        //                             d="M4 6h16M4 12h16M4 18h16"
-        //                         ></path>
-        //                     </svg>
-        //                 </label>
-        //             </div>
-        //             <h1 className="flex-1 px-2 mx-2">Ryan McDonough</h1>
-        //             <div className="flex-none hidden lg:block">
-        //                 <ul className="menu menu-horizontal">
-        //                     <li>
-        //                         <a>Navbar Item 1</a>
-        //                     </li>
-        //                     <li>
-        //                         <a>Navbar Item 2</a>
-        //                     </li>
-        //                 </ul>
-        //             </div>
-        //         </div>
-        //     </div>
-        //     <div className="drawer-side">
-        //         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-        //         <ul className="menu p-4 w-80 min-h-full bg-base-200 z-10">
-        //             <li>
-        //                 <NavLink
-        //                     to="/projects"
-        //                     className="btn btn-ghost md:hover:scale-105 transition-transform"
-        //                 >
-        //                     Projects
-        //                 </NavLink>
-        //             </li>
-        //             <li>
-        //                 <a>Sidebar Item 2</a>
-        //             </li>
-        //         </ul>
-        //     </div>
-        // </div>
     );
 };

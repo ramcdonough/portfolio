@@ -7,7 +7,7 @@ function Profile() {
 
     return (
         <div className="flex justify-center h-screen">
-            <div className="md:mt-40 md:w-1/2 sm:w-full p-5 text-primary">
+            <div className="md:mt-40 lg:w-1/2 md:w-3/4 sm:w-full p-5 text-center md:text-left text-primary">
                 <FallingText
                     image="/images/avatar.jpg"
                     imagePlacement="auto"
