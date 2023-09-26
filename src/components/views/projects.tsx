@@ -12,6 +12,7 @@ function Projects() {
                     title="Funtime"
                     subtitle="Collaborator"
                     subtitleDate="2020-Current"
+                    card={true}
                     link="https://www.play-funtime.com"
                     body={[
                         "Created a dynamic web application to manage a football 'pick'em' league with 65 weekly users.",
@@ -23,11 +24,12 @@ function Projects() {
                 />
                 <FallingText
                     image="/images/NUWCLogo.png"
-                    imagePlacement="right"
+                    imagePlacement="left"
                     imageSize={300}
                     title="NUWC Employee Workflow Tool (Senior Project)"
                     subtitle="Scrum Master"
                     subtitleDate="Sept 2019 - April 2020"
+                    card={true}
                     body={[
                         "Elected by peers to assume the speaking role for the final presentation.",
                         "Spearheaded the design and development of an internal web application enabling seamless management, tracking, and distribution of all approval processes throughout the organization.",

@@ -39,9 +39,14 @@ export const Nav = () => {
                             ></path>
                         </svg>
                     </label>
-                    <h1 className="text-primary md:ml-5 font-semibold whitespace-nowrap ml-2">
-                        Ryan McDonough
-                    </h1>
+                    <Link
+                        to="/"
+                        className="btn-ghost btn normal-case hover:bg-transparent"
+                    >
+                        <h1 className="text-primary md:ml-5 font-semibold">
+                            Ryan McDonough
+                        </h1>
+                    </Link>
                 </div>
                 <div className="drawer-side z-50">
                     <label

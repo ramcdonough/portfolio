@@ -10,8 +10,10 @@ function Experience() {
                     image="/images/VisibleBodyLogo.png"
                     imagePlacement="left"
                     imageSize={300}
+                    whiteBackground={true}
                     subtitle="Full-Stack Developer"
                     subtitleDate="06/2021 - Current"
+                    card={true}
                     body={[
                         "Orchestrated the design, development, and deployment of small and large features for a user base of over 250,000 through agile methodologies with Ruby on Rails, expanding the user base and enhancing user engagement.",
                         "Spearheaded a JavaScript initiative that significantly reduced redirects, elevating user experience and bolstering overall system performance.",

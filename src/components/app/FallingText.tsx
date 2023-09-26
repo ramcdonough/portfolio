@@ -9,8 +9,10 @@ interface FallingTextProps {
     image?: string;
     imagePlacement?: "center" | "left" | "right" | "auto";
     imageSize?: number;
+    whiteBackground?: boolean;
     link?: string;
     circle?: boolean;
+    card?: boolean;
 }
 
 const FallingText: React.FC<FallingTextProps> = ({
@@ -21,7 +23,9 @@ const FallingText: React.FC<FallingTextProps> = ({
     image,
     imagePlacement = "auto",
     imageSize,
+    whiteBackground,
     link,
+    card,
     circle = false,
 }) => {
     let altText = image;
@@ -33,11 +37,17 @@ const FallingText: React.FC<FallingTextProps> = ({
     }
 
     return (
-        <div className="lg:flex mb-10">
+        <div
+            className={`lg:flex-row mb-10 ${
+                card ? "card bg-primary p-5 drop-shadow-lg text-white" : ""
+            }`}
+        >
             {image && imagePlacement !== "right" && (
                 <div className="falling-text-image">
                     <div
-                        className="image-container lg:mr-10 mb-5 mx-auto lg:mx-0"
+                        className={`image-container lg:mr-10 mb-5 mx-auto lg:mx-0 ${
+                            whiteBackground ? "bg-white rounded-lg p-4" : ""
+                        }`}
                         style={
                             imageSize !== undefined ? { width: imageSize } : {}
                         }
@@ -83,7 +93,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                     </div>
                 )}
                 {body && (
-                    <div className="falling-text-body font-semibold">
+                    <div className="falling-text-body">
                         {Array.isArray(body) ? (
                             <ul>
                                 <hr className="border-primary my-2" />
