@@ -4,15 +4,15 @@ import FallingText from "../app/FallingText";
 function Projects() {
     return (
         <div className="flex justify-center">
-            <div className="lg:mt-20 md:w-2/3 sm:w-full px-5 text-primary">
+            <div className="lg:mt-20 md:w-2/3 w-full px-5 text-primary">
                 <FallingText
                     image="/images/funtime_full_logo.png"
                     imagePlacement="left"
                     imageSize={300}
-                    title="Funtime"
                     subtitle="Collaborator"
                     subtitleDate="2020-Current"
                     card={true}
+                    linkText="Check it out here"
                     link="https://www.play-funtime.com"
                     body={[
                         "Created a dynamic web application to manage a football 'pick'em' league with 65 weekly users.",

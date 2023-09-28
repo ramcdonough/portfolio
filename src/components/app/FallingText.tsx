@@ -11,6 +11,7 @@ interface FallingTextProps {
     imageSize?: number;
     whiteBackground?: boolean;
     link?: string;
+    linkText?: string;
     circle?: boolean;
     card?: boolean;
 }
@@ -25,6 +26,7 @@ const FallingText: React.FC<FallingTextProps> = ({
     imageSize,
     whiteBackground,
     link,
+    linkText,
     card,
     circle = false,
 }) => {
@@ -38,14 +40,14 @@ const FallingText: React.FC<FallingTextProps> = ({
 
     return (
         <div
-            className={`lg:flex-row mb-10 ${
-                card ? "card bg-primary p-5 drop-shadow-lg text-white" : ""
+            className={`lg:flex-row lg:flex mb-10 ${
+                card ? "card bg-primary p-5 drop-shadow-xl text-white" : ""
             }`}
         >
             {image && imagePlacement !== "right" && (
                 <div className="falling-text-image">
                     <div
-                        className={`image-container lg:mr-10 mb-5 mx-auto lg:mx-0 ${
+                        className={`image-container lg:mr-10 mb-2 mx-auto lg:mx-0 ${
                             whiteBackground ? "bg-white rounded-lg p-4" : ""
                         }`}
                         style={
@@ -62,12 +64,12 @@ const FallingText: React.FC<FallingTextProps> = ({
                     </div>
                     {link && (
                         <a
-                            className="md:ml-3 ml-12"
+                            className="md:ml-3 m-auto text-blue-300"
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            {link}
+                            {linkText ? linkText : link}
                         </a>
                     )}
                 </div>
@@ -80,8 +82,8 @@ const FallingText: React.FC<FallingTextProps> = ({
                 )}
                 {subtitle && (
                     <div
-                        className={`falling-text-subtitle flex ${
-                            body ? "font-bold" : ""
+                        className={`falling-text-subtitle flex-col lg:flex-row ${
+                            body ? "font-semibold" : ""
                         }`}
                     >
                         <h3>{subtitle}</h3>
@@ -96,7 +98,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                     <div className="falling-text-body">
                         {Array.isArray(body) ? (
                             <ul>
-                                <hr className="border-primary my-2" />
+                                <hr className="border-white my-2" />
                                 {body.map((item, index) => (
                                     <li key={index} className="mb-2">
                                         ● {item}

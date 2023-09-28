@@ -43,7 +43,7 @@ export const Nav = () => {
                         to="/"
                         className="btn-ghost btn normal-case hover:bg-transparent"
                     >
-                        <h1 className="text-primary md:ml-5 font-semibold">
+                        <h1 className="text-primary lg:ml-2 font-semibold">
                             Ryan McDonough
                         </h1>
                     </Link>
@@ -83,7 +83,7 @@ export const Nav = () => {
                     to="/"
                     className="btn-ghost btn normal-case hover:bg-transparent"
                 >
-                    <h1 className="text-primary md:ml-5 font-semibold">
+                    <h1 className="text-primary lg:ml-2 font-semibold">
                         Ryan McDonough
                     </h1>
                 </Link>
