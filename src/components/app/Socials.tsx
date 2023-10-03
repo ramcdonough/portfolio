@@ -17,7 +17,7 @@ export const Socials: React.FC<SocialsProps> = ({ vertical = false }) => {
             >
                 <img
                     src={linkedin}
-                    className={vertical ? "w-32 h-32 drop-shadow-lg" : ""}
+                    className={vertical ? "w-32 h-32 drop-shadow-lg" : "w-8"}
                     alt="LinkedIn"
                 />
             </a>
@@ -29,7 +29,7 @@ export const Socials: React.FC<SocialsProps> = ({ vertical = false }) => {
             >
                 <img
                     src={email}
-                    className={vertical ? "w-32 h-32 drop-shadow-lg" : ""}
+                    className={vertical ? "w-32 h-32 drop-shadow-lg" : "w-8"}
                     alt="Email"
                 />
             </a>
@@ -41,7 +41,7 @@ export const Socials: React.FC<SocialsProps> = ({ vertical = false }) => {
             >
                 <img
                     src={github}
-                    className={vertical ? "w-32 h-32 drop-shadow-lg" : ""}
+                    className={vertical ? "w-32 h-32 drop-shadow-lg" : "w-8"}
                     alt="Github"
                 />
             </a>

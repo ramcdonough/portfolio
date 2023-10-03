@@ -1,16 +1,55 @@
+import { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Socials } from "../../components/app/Socials";
 import "../../custom.css";
+import "../../Nav.css";
 
 export const Nav = () => {
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const menuOptions = document.getElementById("menu-options");
+            const menuButton = document.getElementById("menu-button");
+
+            const drawerCheckbox = document.getElementById(
+                "my-drawer"
+            ) as HTMLInputElement;
+
+            if (
+                drawerCheckbox.checked &&
+                !menuOptions?.contains(event.target as Node) &&
+                !menuButton?.contains(event.target as Node)
+            ) {
+                console.log("hello");
+                // Click occurred outside the drawer and outside the menu options, close the drawer and toggle the icon
+                toggleDrawer();
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     function toggleDrawer() {
         const drawerCheckbox = document.getElementById(
             "my-drawer"
         ) as HTMLInputElement;
         if (drawerCheckbox) {
+            console.log("toggleDrawer");
+            toggleIcon();
             drawerCheckbox.checked = !drawerCheckbox.checked;
         }
     }
+
+    const toggleIcon = () => {
+        const icon = document.getElementById("menu-button");
+        if (icon) {
+            console.log("toggleIcon");
+            icon.classList.toggle("change");
+        }
+    };
 
     return (
         <div className="navbar flex flex-col md:flex-row flex-col my-2">
@@ -23,21 +62,17 @@ export const Nav = () => {
                 <div className="drawer-content flex">
                     <label
                         htmlFor="my-drawer"
-                        className="btn bg-transparent border-none drawer-button "
+                        className="btn bg-transparent border-none z-50"
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            className="inline-block w-6 h-6 stroke-current"
+                        <div
+                            className="container"
+                            id="menu-button"
+                            onClick={toggleIcon}
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h16M4 18h16"
-                            ></path>
-                        </svg>
+                            <div className="bar1"></div>
+                            <div className="bar2"></div>
+                            <div className="bar3"></div>
+                        </div>
                     </label>
                     <Link
                         to="/"
@@ -48,12 +83,15 @@ export const Nav = () => {
                         </h1>
                     </Link>
                 </div>
-                <div className="drawer-side z-50">
+                <div className="drawer-side z-10">
                     <label
                         htmlFor="my-drawer"
                         className="drawer-overlay"
                     ></label>
-                    <ul className="menu p-4 w-60 pt-20 gap-5 min-h-full bg-primary text-neutral drop-shadow-lg">
+                    <ul
+                        className="menu p-4 w-60 pt-20 gap-5 min-h-full bg-primary text-neutral drop-shadow-lg"
+                        id="menu-options"
+                    >
                         <NavLink
                             to="/"
                             className="btn btn-ghost md:hover:scale-105 transition-transform"
