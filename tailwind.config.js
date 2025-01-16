@@ -11,7 +11,7 @@ module.exports = {
                 // secondary: "#FF8800", // Custom secondary color
                 secondary: "#B64624", //Blue
                 dark: "#28231C", //Dark greige
-                neutral: "#FAF6D1", //Cream
+                neutral: "#1f1f1f", //Cream
                 white: "#ffffff",
             },
             fontSize: {
