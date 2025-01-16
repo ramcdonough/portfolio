@@ -120,16 +120,11 @@ export const Nav = () => {
                 </div>
             </div>
             <div className="navbar-start w-full md:w-1/2 justify-center md:justify-start hidden lg:flex">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn-ghost btn normal-case hover:bg-transparent">
-                        <h1 className="text-primary lg:ml-2 font-semibold">
-                            Ryan McDonough
-                        </h1>
-                    </label>
-                    <div tabIndex={0} className="dropdown-content z-[1] mt-2">
-                        <ContactDropdown />
-                    </div>
-                </div>
+                <Link to="/" className="btn-ghost btn normal-case hover:bg-transparent">
+                    <h1 className="text-primary lg:ml-2 font-semibold">
+                        Ryan McDonough
+                    </h1>
+                </Link>
             </div>
             <nav className="md:gap-10 hidden lg:flex sm:text-xs text-primary">
                 <NavLink

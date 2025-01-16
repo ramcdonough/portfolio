@@ -6,11 +6,21 @@ interface Point {
   y: number;
 }
 
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  life: number;
+  size: number;
+}
+
 const BackgroundEffect = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef<Point>({ x: 0, y: 0 });
   const pointsRef = useRef<Point[]>([]);
   const currentPointRef = useRef<Point>({ x: 0, y: 0 });
+  const particlesRef = useRef<Particle[]>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,7 +36,43 @@ const BackgroundEffect = () => {
       ctx.fillStyle = 'rgba(18, 18, 18, 0.15)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Smooth interpolation towards mouse position
+      // Update and draw particles
+      particlesRef.current.forEach((particle, index) => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.vx *= 0.98;
+        particle.vy *= 0.98;
+        particle.life -= 0.01;
+        
+        if (particle.life <= 0) {
+          particlesRef.current.splice(index, 1);
+          return;
+        }
+
+        // Draw connections between nearby particles
+        particlesRef.current.forEach((otherParticle) => {
+          const dx = particle.x - otherParticle.x;
+          const dy = particle.y - otherParticle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 50) {
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.strokeStyle = `rgba(120, 120, 180, ${0.2 * particle.life * (1 - distance / 50)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        });
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(180, 180, 255, ${particle.life})`;
+        ctx.fill();
+      });
+
+      // Draw mouse trail
       currentPointRef.current.x += (mouseRef.current.x - currentPointRef.current.x) * 0.15;
       currentPointRef.current.y += (mouseRef.current.y - currentPointRef.current.y) * 0.15;
 
@@ -77,19 +123,39 @@ const BackgroundEffect = () => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
     };
 
+    const handleClick = (e: MouseEvent) => {
+      // Create a small burst of particles
+      for (let i = 0; i < 12; i++) {
+        const angle = (Math.PI * 2 * i) / 12;
+        const speed = 0.5 + Math.random() * 1;
+        
+        particlesRef.current.push({
+          x: e.clientX,
+          y: e.clientY,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          life: 1,
+          size: 1
+        });
+      }
+    };
+
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      pointsRef.current = []; // Reset points on resize
+      pointsRef.current = [];
+      particlesRef.current = [];
     };
 
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('click', handleClick);
     animate();
 
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('click', handleClick);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
