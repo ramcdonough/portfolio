@@ -55,7 +55,7 @@ export const Nav = () => {
     };
 
     return (
-        <div className="navbar flex flex-col md:flex-row flex-col my-2">
+        <div className="navbar flex flex-col md:flex-row flex-col py-2">
             <div className="drawer flex lg:hidden">
                 <input
                     id="my-drawer"
@@ -81,7 +81,7 @@ export const Nav = () => {
                         to="/"
                         className="btn-ghost btn normal-case hover:bg-transparent"
                     >
-                        <h1 className="text-primary lg:ml-2 font-semibold">
+                        <h1 className="text-primary text-xl lg:ml-2 font-semibold">
                             Ryan McDonough
                         </h1>
                     </Link>
@@ -121,7 +121,7 @@ export const Nav = () => {
             </div>
             <div className="navbar-start w-full md:w-1/2 justify-center md:justify-start hidden lg:flex">
                 <Link to="/" className="btn-ghost btn normal-case hover:bg-transparent">
-                    <h1 className="text-primary lg:ml-2 font-semibold">
+                    <h1 className="text-primary text-xl lg:ml-2 font-semibold">
                         Ryan McDonough
                     </h1>
                 </Link>

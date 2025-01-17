@@ -10,13 +10,14 @@ function Profile() {
             <div className="md:mt-40 lg:w-1/2 md:w-3/4 sm:w-full p-5 text-center md:text-left text-primary">
                 <FallingText
                     image="/images/avatar.jpg"
-                    imagePlacement="auto"
+                    imagePlacement={imagePlacement}
                     imageSize={150}
                     circle={true}
-                    title="Hello. I'm Ryan."
-                    subtitle="A software engineer with a passion for crafting 
-                    seamless digital experiences, from database architecture to polished front-end interfaces, 
-                    to drive innovation and solve complex challenges."
+                    // title="Ryan McDonough"
+                    subtitle="Software Engineer"
+                    body="Designing scalable back-end architecture and intuitive 
+                    front-end interfaces, with a focus on reusability, 
+                    modular design, and delivering exceptional user experiences."
                 />
             </div>
         </div>

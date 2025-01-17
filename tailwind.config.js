@@ -7,22 +7,25 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: "#537A5A", // Fern Green
+                primary: "#E4DECA", // Cream
+                // primary: "#537A5A" // Fern Green
                 // secondary: "#FF8800", // Custom secondary color
-                secondary: "#B64624", //Blue
-                dark: "#28231C", //Dark greige
+                secondary: "#004225", //redish
+                dark: "#1E1E1E", //Dark green BG color
+                // dark: "#003820", //Dark green BG color
                 neutral: "#1f1f1f", //Cream
                 white: "#ffffff",
             },
             fontSize: {
-                xs: "18px",
-                sm: "22px",
-                base: "28px",
-                lg: "32px",
-                xl: "40px",
+                'xs': ['14px', { lineHeight: '20px' }],
+                'sm': ['16px', { lineHeight: '24px' }],
+                'base': ['18px', { lineHeight: '28px' }],
+                'lg': ['20px', { lineHeight: '30px' }],
+                'xl': ['24px', { lineHeight: '32px' }],
+                '2xl': ['30px', { lineHeight: '36px' }],
+                '3xl': ['36px', { lineHeight: '40px' }],
             },
         },
     },
-
     plugins: [daisyui],
 };

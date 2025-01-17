@@ -8,7 +8,7 @@ export const AnimatedRoutes = () => {
   const location = useLocation();
 
   const pageTransition = {
-    duration: 0.6,
+    duration: 0.5,
     ease: "easeInOut"
   };
 

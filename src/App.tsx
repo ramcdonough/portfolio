@@ -1,16 +1,16 @@
 import { AnimatedRoutes } from './components/AnimatedRoutes';
 import { Nav } from './components/app/Nav';
-import BackgroundEffect from './components/app/BackgroundEffect';
 import { Analytics } from "@vercel/analytics/react"
 
 function App() {
     return (
-        <>
+        <div className="min-h-screen flex flex-col bg-dark">
             <Analytics />
-            <BackgroundEffect />
             <Nav />
-            <AnimatedRoutes />
-        </>
+            <div className="flex-1">
+                <AnimatedRoutes />
+            </div>
+        </div>
     );
 }
 

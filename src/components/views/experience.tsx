@@ -8,18 +8,20 @@ function Experience() {
             <TimelineCard
                 image="/images/logo_linksquares.png"
                 role="Software Engineer"
-                date="06/2023 - 01/2024"
+                date="11/2023 - 01/2025"
                 link="https://www.linksquares.com"
                 description={[
-                    "Developed and maintained a comprehensive API for a client-facing application, ensuring robust data handling and efficient communication with external systems.",
-                    "Implemented a comprehensive authentication system using JWT, enhancing security and user experience.",
-                    "Optimized database queries and implemented caching strategies to improve application performance and scalability.",
+                    "Independently designed and implemented an internal API key management system, enabling clients to view key names and manage activation without exposing key values",
+                    "Built internal tool to fully manage and generate the internal API keys",
+                    "Developed scalable solutions using Ruby on Rails, React, Docker, and RSpec for robust testing across 4 repositories.",
+                    "Built and maintained integrations between internal and third-party systems, optimizing customer workflows and increasing customer satisfaction",
+                    "Collaborated with cross-functional teams to deliver features, analytics, and integrations by a deadline",
                 ]}
             />
             <TimelineCard
                 image="/images/VisibleBodyLogo.png"
                 role="Full-Stack Developer"
-                date="06/2021 - Current"
+                date="06/2021 - 11/2023"
                 link="https://www.visiblebody.com"
                 description={[
                     "Orchestrated the design, development, and deployment of small and large features for a user base of over 250,000 through agile methodologies with Ruby on Rails, expanding the user base and enhancing user engagement.",

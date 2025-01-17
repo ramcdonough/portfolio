@@ -1,43 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Lora:wght@400;700&display=swap');
+
 :root {
-    --base-font-size: 16px;
-    --h1-font-size: 26px;
-    --h2-font-size: 26px;
-    --h3-font-size: 22px;
-    --span-font-size: 18px;
+    --primary-font: "Roboto", sans-serif;
+    /* --heading-font: "Lora", serif; */
+    --heading-font: "Croissant One", cursive;
 }
 
+/* Only keep h1 separate if you need a special font */
 h1 {
-    font-family: "Croissant One", cursive;
-    font-size: var(--h1-font-size);
-}
-
-h2 {
-    font-family: "Mooli", sans-serif;
-    font-size: var(--h2-font-size);
-}
-
-h3 {
-    font-family: "Mooli", sans-serif;
-    font-size: var(--h3-font-size);
-    line-height: 1.2;
-}
-h4 {
-    font-family: "Mooli", sans-serif;
-    font-size: var(--h3-font-size);
-    line-height: 1.2;
-}
-body {
-    font-family: "Mooli", sans-serif;
-    font-size: var(--base-font-size);
-}
-
-p {
-    font-family: "Mooli", sans-serif;
-    font-size: var(--base-font-size);
-}
-span {
-    font-family: "Mooli", sans-serif;
-    font-size: var(--span-font-size);
+    font-family: var(--heading-font);
 }
 
 /* Mobile-first dropdown positioning */
