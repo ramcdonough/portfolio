@@ -28,7 +28,7 @@ export const AnimatedRoutes = () => {
   };
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
+    <div className="relative min-h-screen flex flex-col">
       <AnimatePresence mode="wait" initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route
@@ -40,12 +40,7 @@ export const AnimatedRoutes = () => {
                 animate="animate"
                 exit="exit"
                 transition={pageTransition}
-                style={{
-                  position: 'absolute',
-                  width: '100%',
-                  left: 0,
-                  right: 0
-                }}
+                className="w-full flex-grow"
               >
                 <Profile />
               </motion.div>
@@ -60,12 +55,7 @@ export const AnimatedRoutes = () => {
                 animate="animate"
                 exit="exit"
                 transition={pageTransition}
-                style={{
-                  position: 'absolute',
-                  width: '100%',
-                  left: 0,
-                  right: 0
-                }}
+                className="w-full flex-grow"
               >
                 <Experience />
               </motion.div>
@@ -80,12 +70,7 @@ export const AnimatedRoutes = () => {
                 animate="animate"
                 exit="exit"
                 transition={pageTransition}
-                style={{
-                  position: 'absolute',
-                  width: '100%',
-                  left: 0,
-                  right: 0
-                }}
+                className="w-full flex-grow"
               >
                 <Projects />
               </motion.div>

@@ -40,7 +40,7 @@ const FallingText: React.FC<FallingTextProps> = ({
 
     return (
         <div
-            className={`lg:flex-row lg:flex mb-10 ${
+            className={`lg:flex-row lg:flex lg:max-h-[500px] ${
                 card ? "card bg-primary p-5 drop-shadow-xl text-white" : ""
             }`}
         >
@@ -95,18 +95,19 @@ const FallingText: React.FC<FallingTextProps> = ({
                     </div>
                 )}
                 {body && (
-                    <div className="falling-text-body">
+                    <div className="falling-text-body max-h-[300px] overflow-y-auto">
                         {Array.isArray(body) ? (
-                            <ul>
+                            <ul className="space-y-2">
                                 <hr className="border-white my-2" />
                                 {body.map((item, index) => (
-                                    <li key={index} className="mb-2">
-                                        ● {item}
+                                    <li key={index} className="flex">
+                                        <span className="mr-2">●</span>
+                                        <span>{item}</span>
                                     </li>
                                 ))}
                             </ul>
                         ) : (
-                            <body>{body}</body>
+                            <p>{body}</p>
                         )}
                     </div>
                 )}

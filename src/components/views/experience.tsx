@@ -11,15 +11,17 @@ function Experience() {
                 date="11/2023 - 01/2025"
                 link="https://www.linksquares.com"
                 description={[
-                    "Independently designed and implemented an internal API key management system, enabling clients to view key names and manage activation without exposing key values",
-                    "Built internal tool to fully manage and generate the internal API keys",
-                    "Developed scalable solutions using Ruby on Rails, React, Docker, and RSpec for robust testing across 4 repositories.",
-                    "Built and maintained integrations between internal and third-party systems, optimizing customer workflows and increasing customer satisfaction",
-                    "Collaborated with cross-functional teams to deliver features, analytics, and integrations by a deadline",
+                    "Developed scalable solutions using Ruby on Rails, React, SQL, and GraphQL across 4 repositories.",
+                    "Worked closely with Sales and Marketing teams to deliver high-priority, time-sensitive features, analytics, and integrations by a deadline.",
+                    "Independently designed and implemented an internal API key management system that enabled clients to view key names and manage activation without exposing key values.",
+                    "Built and maintained integrations between internal and third-party systems, optimizing customer workflows, effectively reducing churn and increasing customer satisfaction.",
+                    "Adapted quickly to diverse projects, managing frequent context switching between multiple applications, internal tools, integrations, and analytics dashboards to meet business objectives.",
+                    "Wrote comprehensive test coverage using RSpec, ensuring code reliability and robustness through well-structured unit, integration, and feature tests.",
+                    "Balanced competing priorities across projects with distinct requirements, demonstrating strong organizational skills and technical adaptability in a fast-paced environment."
                 ]}
             />
             <TimelineCard
-                image="/images/VisibleBodyLogo.png"
+                image="/images/logo_visiblebody.png"
                 role="Full-Stack Developer"
                 date="06/2021 - 11/2023"
                 link="https://www.visiblebody.com"

@@ -67,8 +67,8 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
                     {/* Description List */}
                     <div className="space-y-1.5">
                         {description.map((item, index) => (
-                            <div key={index} className="flex items-start gap-2 text-gray-300">
-                                <span className="text-blue-400 mt-1">•</span>
+                            <div key={index} className="flex items-center gap-2 text-gray-300">
+                                <span className="text-blue-400 text-xs">•</span>
                                 <p className="text-xs leading-relaxed">{item}</p>
                             </div>
                         ))}
