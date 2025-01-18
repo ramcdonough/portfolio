@@ -23,3 +23,19 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
 }
+
+.chat-transition {
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Transition for both max-height and opacity */
+    overflow: hidden; /* Prevent overflow during transition */
+}
+
+.chat-collapsed {
+    max-height: 0px; /* Height when collapsed */
+    opacity: 0; /* Make it invisible when collapsed */
+}
+
+.chat-expanded {
+    max-height: 300px; /* Height when expanded */
+    opacity: 1; /* Fully visible when expanded */
+    overflow-y: auto;
+}

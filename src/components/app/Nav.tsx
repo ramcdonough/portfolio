@@ -1,12 +1,12 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Socials } from "../../components/app/Socials";
 import { ContactDropdown } from "./ContactDropdown";
 import "../../custom.css";
 import "../../Nav.css";
 
 export const Nav = () => {
     const location = useLocation();
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -22,7 +22,6 @@ export const Nav = () => {
                 !menuOptions?.contains(event.target as Node) &&
                 !menuButton?.contains(event.target as Node)
             ) {
-                console.log("hello");
                 // Click occurred outside the drawer and outside the menu options, close the drawer and toggle the icon
                 toggleDrawer();
             }
@@ -54,8 +53,25 @@ export const Nav = () => {
         }
     };
 
+    // Identify when the user scrolls down
+    const handleScroll = () => {
+        if (window.scrollY > 50) { // scroll threshold
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+    };
+
+    // Add event listener for scroll events
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="navbar flex flex-col md:flex-row flex-col py-2">
+        <div className={`navbar sticky-navbar ${isScrolled ? 'scrolled' : ''} flex flex-col md:flex-row py-2`}>
             <div className="drawer flex lg:hidden">
                 <input
                     id="my-drawer"
@@ -92,7 +108,7 @@ export const Nav = () => {
                         className="drawer-overlay"
                     ></label>
                     <ul
-                        className="menu p-4 w-60 pt-20 gap-5 min-h-full bg-primary text-neutral drop-shadow-lg"
+                        className="menu p-4 w-60 pt-20 gap-5 min-h-full bg-secondary text-primary drop-shadow-lg"
                         id="menu-options"
                     >
                         <NavLink

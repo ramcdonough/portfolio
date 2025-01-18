@@ -30,3 +30,19 @@
     transform: translate(0, -8px) rotate(45deg);
     background-color: #faf6d1;
 }
+
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: transparent; /* Initial background color */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    box-shadow: none; /* No shadow initially */
+}
+
+.sticky-navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.1); /* Background color when scrolled */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* shadow when scrolled */
+    backdrop-filter: blur(10px);
+    border-radius: 0px 0px 20px 20px;
+}
