@@ -1,7 +1,6 @@
 import React from "react";
 import FallingText from "../app/FallingText";
 import { ProfileCard } from "../app/ProfileCard";
-import { ChatBot } from "../chatbot/ChatBot";
 
 function Profile() {
     const imagePlacement = window.innerWidth < 768 ? "center" : "left";
@@ -9,7 +8,7 @@ function Profile() {
     return (
         <div className="relative min-h-screen">
             <div className="flex justify-center w-full">
-                <div className="container relative w-full md:mt-20 lg:w-1/2 md:w-3/4 p-5 text-center md:text-left text-primary">
+                <div className="container relative w-full md:mt-32 lg:w-1/2 md:w-3/4 p-5 text-center md:text-left text-primary">
                     <FallingText
                         image="/images/avatar.jpg"
                         imagePlacement={imagePlacement}
@@ -21,9 +20,6 @@ function Profile() {
                         front-end interfaces, with a focus on reusability, 
                         modular design, and delivering exceptional user experiences."
                     />
-                    <div className="flex justify-center mt-5">
-                        <ChatBot />
-                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 mb-20">
                         <ProfileCard 
                             logo="/images/logo_linksquares.png"
