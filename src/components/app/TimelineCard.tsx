@@ -8,6 +8,7 @@ export interface TimelineCardProps {
     description: string[];
     link?: string;
     linkText?: string;
+    techStack?: string[];
 }
 
 export const TimelineCard: React.FC<TimelineCardProps> = ({
@@ -17,6 +18,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
     date,
     description,
     link,
+    techStack,
 }) => {
     const ImageComponent = () => (
         <img 
@@ -73,6 +75,14 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
                             </div>
                         ))}
                     </div>
+
+                    {techStack && (
+                        <div className="flex flex-wrap gap-2 mt-2">
+                            {techStack.map((item, index) => (
+                                <span key={index} className="text-xs text-gray-400 bg-gray-800 px-2 py-1 rounded-md">{item}</span>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
