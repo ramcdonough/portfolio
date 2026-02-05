@@ -1,12 +1,13 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 interface ProfileCardProps {
     logo: string;
     logoAlt: string;
     title: string;
     subtitle: string;
     date: string;
-    description: string;
+    description?: string | null;
+    link?: string | null;
 }
 
 export const ProfileCard: React.FC<ProfileCardProps> = ({
@@ -15,9 +16,15 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
     title,
     subtitle,
     date,
-    description
-}) => (
-    <div className="group bg-white/5 backdrop-blur-sm rounded-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 cursor-pointer flex flex-col items-center h-fit">
+    description = null,
+    link = null,
+}) => {
+    const navigate = useNavigate();
+
+    return(
+    <div className="group bg-white/5 backdrop-blur-sm rounded-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 cursor-pointer flex flex-col items-center h-fit"
+        onClick={link ? () => navigate(link) : undefined}
+    >
         <div className="w-full p-6">
             <div className="w-40 h-20 flex items-center justify-center mx-auto">
                 <img 
@@ -30,12 +37,14 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                 <h3 className="font-semibold">{title}</h3>
                 <p className="text-sm opacity-75">{subtitle}</p>
                 <p className="text-xs opacity-60">{date}</p>
-                <div className="max-h-0 group-hover:max-h-20 overflow-hidden transition-all duration-300">
-                    <p className="text-xs leading-relaxed mt-2">
-                        {description}
-                    </p>
-                </div>
+                {description && (
+                    <div className="max-h-0 group-hover:max-h-20 overflow-hidden transition-all duration-300">
+                        <p className="text-xs leading-relaxed mt-2">
+                            {description}
+                        </p>
+                    </div>
+                )}
             </div>
         </div>
-    </div>
-); 
+    </div>)
+}; 

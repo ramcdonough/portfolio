@@ -27,7 +27,8 @@ function Profile() {
                             title="LinkSquares"
                             subtitle="Software Engineer"
                             date="2023 - 2025"
-                            description="Building scalable solutions for AI-powered contract analysis"
+                            description="AI-powered contract lifecycle management software"
+                            link="/experience#linksquares"
                         />
                         <ProfileCard 
                             logo="/images/logo_visiblebody.png"
@@ -35,7 +36,8 @@ function Profile() {
                             title="Visible Body"
                             subtitle="Full-Stack Developer"
                             date="2021 - 2023"
-                            description="Developed biology and anatomy course management software"
+                            description="Biology and anatomy course management software"
+                            link="/experience#visiblebody"
                         />
                         <ProfileCard 
                             logo="/images/logo_umassd_alumni.png"
@@ -43,7 +45,6 @@ function Profile() {
                             title="UMass Dartmouth"
                             subtitle="Computer Science, B.S."
                             date="Class of 2020"
-                            description="Focus on Software Engineering and Algorithm Design"
                         />
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React from "react";
 
 export interface TimelineCardProps {
+    id: string;
     image: string;
     title?: string;
     role: string;
@@ -12,6 +13,7 @@ export interface TimelineCardProps {
 }
 
 export const TimelineCard: React.FC<TimelineCardProps> = ({
+    id,
     image,
     title,
     role,
@@ -29,7 +31,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
     );
 
     return (
-        <div className="mb-6 bg-[#1a1a1a] rounded-xl border border-gray-700/30 overflow-hidden hover:border-gray-600/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+        <div id={id} className="mb-6 bg-[#1a1a1a] rounded-xl border border-gray-700/30 overflow-hidden hover:border-gray-600/50 transition-all duration-300 shadow-lg hover:shadow-xl">
             <div className="flex flex-col md:flex-row">
                 {/* Image Container */}
                 <div className="md:w-1/3 p-4 flex items-center justify-center bg-[#151515]">

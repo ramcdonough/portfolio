@@ -6,6 +6,7 @@ function Projects() {
     return (
         <TimelinePage>
             <TimelineCard
+                id="goalist"
                 image="/images/logo_goalist.png"
                 link="https://goalist-app.vercel.app"
                 title="Goalist"
@@ -23,6 +24,7 @@ function Projects() {
                 techStack={["React", "React Context API", "Tailwind", "TypeScript", "Vercel", "Supabase"]}
             />
             <TimelineCard
+                id="nuwc"
                 image="/images/NUWCLogo.png"
                 title="NUWC Employee Workflow Tool (Senior Project)"
                 role="Scrum Master"
