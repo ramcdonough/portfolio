@@ -112,7 +112,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                     </div>
                 )}
             </div>
-            {image && imagePlacement == "right" && (
+            {image && imagePlacement === "right" && (
                 <div className="falling-text-image">
                     <div
                         className="image-container md:ml-10 mb-8 mx-auto"

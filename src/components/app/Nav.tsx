@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ContactDropdown } from "./ContactDropdown";
 import "../../custom.css";
@@ -7,6 +7,25 @@ import "../../Nav.css";
 export const Nav = () => {
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const toggleIcon = useCallback(() => {
+        const icon = document.getElementById("menu-button");
+        if (icon) {
+            console.log("toggleIcon");
+            icon.classList.toggle("change");
+        }
+    }, []);
+
+    const toggleDrawer = useCallback(() => {
+        const drawerCheckbox = document.getElementById(
+            "my-drawer"
+        ) as HTMLInputElement;
+        if (drawerCheckbox) {
+            console.log("toggleDrawer");
+            toggleIcon();
+            drawerCheckbox.checked = !drawerCheckbox.checked;
+        }
+    }, [toggleIcon]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -32,26 +51,7 @@ export const Nav = () => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, []);
-
-    function toggleDrawer() {
-        const drawerCheckbox = document.getElementById(
-            "my-drawer"
-        ) as HTMLInputElement;
-        if (drawerCheckbox) {
-            console.log("toggleDrawer");
-            toggleIcon();
-            drawerCheckbox.checked = !drawerCheckbox.checked;
-        }
-    }
-
-    const toggleIcon = () => {
-        const icon = document.getElementById("menu-button");
-        if (icon) {
-            console.log("toggleIcon");
-            icon.classList.toggle("change");
-        }
-    };
+    }, [toggleDrawer]);
 
     // Identify when the user scrolls down
     const handleScroll = () => {
