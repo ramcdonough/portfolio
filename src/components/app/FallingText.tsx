@@ -14,6 +14,7 @@ interface FallingTextProps {
     linkText?: string;
     circle?: boolean;
     card?: boolean;
+    gradientTitle?: boolean;
 }
 
 const FallingText: React.FC<FallingTextProps> = ({
@@ -29,6 +30,7 @@ const FallingText: React.FC<FallingTextProps> = ({
     linkText,
     card,
     circle = false,
+    gradientTitle = false,
 }) => {
     let altText = image;
 
@@ -64,7 +66,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                     </div>
                     {link && (
                         <a
-                            className="md:ml-3 m-auto text-blue-300"
+                            className="md:ml-3 m-auto text-accent hover:text-accentCool transition-colors"
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -74,15 +76,22 @@ const FallingText: React.FC<FallingTextProps> = ({
                     )}
                 </div>
             )}
-            <div>
+            <div className="font-sans text-center md:text-left">
                 {title && (
-                    <div className="falling-text-title text-2xl font-bold">
-                        <h2>{title}</h2>
+                    <div className={`falling-text-title font-bold w-full md:w-fit text-center md:text-left ${gradientTitle ? "text-xl md:text-2xl" : "text-2xl"}`}>
+                        {gradientTitle ? (
+                            <div className="hero-name-wrap inline-block">
+                                <h2 className="hero-name-base">{title}</h2>
+                                <h2 className="hero-name-shine" aria-hidden>{title}</h2>
+                            </div>
+                        ) : (
+                            <h2>{title}</h2>
+                        )}
                     </div>
                 )}
                 {subtitle && (
                     <div
-                        className={`falling-text-subtitle flex-col text-lg lg:flex-row ${
+                        className={`falling-text-subtitle subtitle-pulse flex flex-col text-lg lg:flex-row justify-center md:justify-start ${
                             body ? "font-semibold" : ""
                         }`}
                     >

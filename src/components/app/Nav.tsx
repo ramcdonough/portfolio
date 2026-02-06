@@ -10,10 +10,7 @@ export const Nav = () => {
 
     const toggleIcon = useCallback(() => {
         const icon = document.getElementById("menu-button");
-        if (icon) {
-            console.log("toggleIcon");
-            icon.classList.toggle("change");
-        }
+        if (icon) icon.classList.toggle("change");
     }, []);
 
     const toggleDrawer = useCallback(() => {
@@ -21,7 +18,6 @@ export const Nav = () => {
             "my-drawer"
         ) as HTMLInputElement;
         if (drawerCheckbox) {
-            console.log("toggleDrawer");
             toggleIcon();
             drawerCheckbox.checked = !drawerCheckbox.checked;
         }
@@ -53,25 +49,22 @@ export const Nav = () => {
         };
     }, [toggleDrawer]);
 
-    // Identify when the user scrolls down
-    const handleScroll = () => {
-        if (window.scrollY > 50) { // scroll threshold
-            setIsScrolled(true);
-        } else {
-            setIsScrolled(false);
-        }
-    };
-
-    // Add event listener for scroll events
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
+        let ticking = false;
+        const handleScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                setIsScrolled(window.scrollY > 50);
+                ticking = false;
+            });
         };
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
-        <div className={`navbar sticky-navbar ${isScrolled ? 'scrolled' : ''} flex flex-col md:flex-row py-2`}>
+        <div className={`navbar sticky top-0 z-[1000] sticky-navbar ${isScrolled ? 'scrolled' : ''} flex flex-col md:flex-row py-2`}>
             <div className="drawer flex lg:hidden">
                 <input
                     id="my-drawer"
@@ -81,7 +74,8 @@ export const Nav = () => {
                 <div className="drawer-content flex">
                     <label
                         htmlFor="my-drawer"
-                        className="btn bg-transparent border-none z-50"
+                        className="btn bg-transparent border-none z-50 min-h-[44px] min-w-[44px] flex items-center justify-center -my-1"
+                        aria-label="Open menu"
                     >
                         <div
                             className="container"
@@ -113,21 +107,21 @@ export const Nav = () => {
                     >
                         <NavLink
                             to="/"
-                            className="btn btn-ghost md:hover:scale-105 transition-transform"
+                            className={({ isActive }) => `btn btn-ghost ${isActive ? "font-semibold" : ""}`}
                             onClick={toggleDrawer}
                         >
                             Home
                         </NavLink>
                         <NavLink
                             to="/experience"
-                            className="btn btn-ghost md:hover:scale-105 transition-transform"
+                            className={({ isActive }) => `btn btn-ghost ${isActive ? "font-semibold" : ""}`}
                             onClick={toggleDrawer}
                         >
                             Experience
                         </NavLink>
                         <NavLink
                             to="/projects"
-                            className="btn btn-ghost md:hover:scale-105 transition-transform"
+                            className={({ isActive }) => `btn btn-ghost ${isActive ? "font-semibold" : ""}`}
                             onClick={toggleDrawer}
                         >
                             Projects
@@ -142,25 +136,25 @@ export const Nav = () => {
                     </h1>
                 </Link>
             </div>
-            <nav className="md:gap-10 hidden lg:flex sm:text-xs text-primary">
+            <nav className="md:gap-10 hidden lg:flex sm:text-xs text-primary nav-links">
                 <NavLink
                     to="/"
                     state={{ from: location.pathname }}
-                    className="btn btn-ghost md:hover:scale-105 transition-transform"
+                    className={({ isActive }) => `nav-link btn btn-ghost ${isActive ? "nav-link-active" : ""}`}
                 >
                     Home
                 </NavLink>
                 <NavLink
                     to="/experience"
                     state={{ from: location.pathname }}
-                    className="btn btn-ghost md:hover:scale-105 transition-transform"
+                    className={({ isActive }) => `nav-link btn btn-ghost ${isActive ? "nav-link-active" : ""}`}
                 >
                     Experience
                 </NavLink>
                 <NavLink
                     to="/projects"
                     state={{ from: location.pathname }}
-                    className="btn btn-ghost md:hover:scale-105 transition-transform"
+                    className={({ isActive }) => `nav-link btn btn-ghost ${isActive ? "nav-link-active" : ""}`}
                 >
                     Projects
                 </NavLink>
@@ -169,7 +163,7 @@ export const Nav = () => {
                 <div className="dropdown lg:dropdown-hover center-dropdown md:hidden">
                     <label
                         tabIndex={0}
-                        className="m-auto btn btn-xs md:btn-md btn-ghost text-primary lg:hover:scale-105 transition-transform"
+                        className="m-auto btn btn-sm btn-ghost text-primary lg:hover:text-accent lg:hover:scale-105 transition-all min-h-[44px] px-4 touch-manipulation"
                     >
                         Contact
                     </label>
@@ -180,7 +174,7 @@ export const Nav = () => {
                 <div className="dropdown lg:dropdown-hover hidden md:block md:dropdown-end">
                     <label
                         tabIndex={0}
-                        className="m-auto btn btn-xs md:btn-md btn-ghost text-primary lg:hover:scale-105 transition-transform group"
+                        className="m-auto btn btn-xs md:btn-md btn-ghost text-primary lg:hover:text-accent lg:hover:scale-105 transition-all group"
                     >
                         Contact
                     </label>

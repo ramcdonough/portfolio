@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
 import { TimelinePage } from "../app/TimelinePage";
 import { TimelineCard } from "../app/TimelineCard";
 
 function Projects() {
+    const sectionRef = useRef(null);
+    const sectionInView = useInView(sectionRef, { once: true, margin: "0px 0px 60px 0px" });
+
     return (
         <TimelinePage>
+            <div ref={sectionRef}>
             <TimelineCard
+                staggerIndex={0}
+                animateIn={sectionInView}
                 id="goalist"
                 image="/images/logo_goalist.png"
                 link="https://goalist-app.vercel.app"
@@ -24,6 +31,8 @@ function Projects() {
                 techStack={["React", "React Context API", "Tailwind", "TypeScript", "Vercel", "Supabase"]}
             />
             <TimelineCard
+                staggerIndex={1}
+                animateIn={sectionInView}
                 id="nuwc"
                 image="/images/NUWCLogo.png"
                 title="NUWC Employee Workflow Tool (Senior Project)"
@@ -39,6 +48,7 @@ function Projects() {
                 ]}
                 techStack={["React", "Express", "Node", "JavaScript", "MongoDB"]}
             />
+            </div>
         </TimelinePage>
     );
 }

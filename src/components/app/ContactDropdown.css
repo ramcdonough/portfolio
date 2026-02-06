@@ -1,0 +1,99 @@
+/* Contact dropdown card — clean, minimal */
+.contact-dropdown-card {
+    background: rgba(26, 26, 26, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    width: min(340px, 90vw);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(91, 163, 212, 0.08);
+}
+
+.contact-dropdown-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #E4DECA;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(91, 163, 212, 0.35);
+    letter-spacing: 0.02em;
+}
+
+.contact-dropdown-email-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.contact-dropdown-email {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.875rem;
+    color: rgba(228, 222, 202, 0.95);
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s ease;
+}
+
+.contact-dropdown-email:hover {
+    color: #5BA3D4;
+}
+
+.contact-dropdown-copy {
+    flex-shrink: 0;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #E4DECA;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-dropdown-copy:hover {
+    background: rgba(91, 163, 212, 0.15);
+    border-color: rgba(91, 163, 212, 0.3);
+    color: #5BA3D4;
+}
+
+.contact-dropdown-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin: 1rem 0;
+}
+
+.contact-dropdown-socials {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.contact-dropdown-socials .flex {
+    gap: 0.5rem;
+}
+
+.contact-dropdown-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 0.8125rem;
+    color: rgba(228, 222, 202, 0.6);
+}
+
+.contact-dropdown-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #6BBF9B;
+    flex-shrink: 0;
+    animation: contact-dot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes contact-dot-pulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.15); }
+}

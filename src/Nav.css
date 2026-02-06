@@ -8,7 +8,7 @@
 .bar3 {
     width: 25px;
     height: 2px;
-    background-color: #537a5a;
+    background-color: #E4DECA;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -16,33 +16,61 @@
 /* Rotate first bar */
 .change .bar1 {
     transform: translate(0, 8px) rotate(-45deg);
-    background-color: #faf6d1;
+    background-color: #E4DECA;
 }
 
 /* Fade out the second bar */
 .change .bar2 {
     opacity: 0;
-    background-color: #faf6d1;
+    background-color: #E4DECA;
 }
 
 /* Rotate last bar */
 .change .bar3 {
     transform: translate(0, -8px) rotate(45deg);
-    background-color: #faf6d1;
+    background-color: #E4DECA;
 }
 
 .sticky-navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: transparent; /* Initial background color */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-    box-shadow: none; /* No shadow initially */
+    background-color: transparent;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, backdrop-filter 0.25s ease;
+    box-shadow: none;
 }
 
 .sticky-navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.1); /* Background color when scrolled */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* shadow when scrolled */
-    backdrop-filter: blur(10px);
-    border-radius: 0px 0px 20px 20px;
+    background-color: rgba(30, 30, 30, 0.85);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 0 0 16px 16px;
+}
+
+/* Animated underline for nav links */
+.nav-links .nav-link {
+    position: relative;
+    transition: transform 0.2s ease;
+}
+.nav-links .nav-link:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+.nav-links .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #5BA3D4, rgba(228, 222, 202, 0.7));
+    transition: width 0.25s ease, left 0.25s ease;
+}
+.nav-links .nav-link:hover::after,
+.nav-links .nav-link-active::after {
+    width: 100%;
+    left: 0;
+}
+.nav-links .nav-link-active {
+    font-weight: 600;
 }

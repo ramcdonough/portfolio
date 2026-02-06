@@ -1,28 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Lora:wght@400;700&display=swap');
-
 :root {
-    --primary-font: "Roboto", sans-serif;
-    /* --heading-font: "Lora", serif; */
     --heading-font: "Croissant One", cursive;
 }
 
-/* Only keep h1 separate if you need a special font */
+/* Logo and any h1: keep original display font */
 h1 {
     font-family: var(--heading-font);
 }
 
-/* Mobile-first dropdown positioning */
+/* Mobile: contact dropdown fixed and inset so it never overflows */
 .center-dropdown {
     position: static;
 }
 
 .center-dropdown .dropdown-content {
-    position: fixed;
-    top: 10%;
-    left: 5vw;
-    max-height: 90vh;
+    position: fixed !important;
+    top: 12%;
+    left: 1rem !important;
+    right: 1rem !important;
+    width: auto !important;
+    max-width: none;
+    max-height: 80vh;
+    overflow-y: auto;
     z-index: 999;
-    width: min(360px, 90vw);
+    display: flex;
+    justify-content: center;
+    transform: none !important;
+}
+
+/* Card stays within the inset area and is centered */
+.center-dropdown .dropdown-content .contact-dropdown-card {
+    width: 100%;
+    max-width: 340px;
 }
 
 /* Desktop dropdown positioning */
@@ -30,15 +38,21 @@ h1 {
     .center-dropdown {
         position: relative;
     }
-    
+
     .center-dropdown .dropdown-content {
-        position: absolute;
+        position: absolute !important;
         top: calc(100% + 5px);
-        left: -120%;
-        width: auto;
-        transform: translateX(-50%);
+        left: -120% !important;
+        right: auto !important;
+        width: auto !important;
+        transform: translateX(-50%) !important;
         padding-top: 30px;
         margin-top: -30px;
+        display: block;
+    }
+
+    .center-dropdown .dropdown-content .contact-dropdown-card {
+        width: min(340px, 90vw);
     }
 
     .center-dropdown .dropdown-content::before {

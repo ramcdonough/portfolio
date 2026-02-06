@@ -1,21 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { useInView } from "framer-motion";
 import { TimelinePage } from "../app/TimelinePage";
 import { TimelineCard } from "../app/TimelineCard";
 
 function Experience() {
+    const sectionRef = useRef(null);
+    const sectionInView = useInView(sectionRef, { once: true, margin: "0px 0px 60px 0px" });
+
     useEffect(() => {
         const hash = window.location.hash;
-        if (hash) {
-            const element = document.getElementById(hash.substring(1)); // Remove the '#' from the hash
+        if (!hash) return;
+        const id = hash.substring(1);
+        const scrollToTarget = () => {
+            const element = document.getElementById(id);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
-        }
+        };
+        const rafId = requestAnimationFrame(() => {
+            requestAnimationFrame(scrollToTarget);
+        });
+        return () => cancelAnimationFrame(rafId);
     }, []);
 
     return (
         <TimelinePage>
+            <div ref={sectionRef}>
             <TimelineCard
+                staggerIndex={0}
+                animateIn={sectionInView}
                 id="linksquares"
                 image="/images/logo_linksquares.png"
                 role="Software Engineer"
@@ -33,6 +46,8 @@ function Experience() {
                 techStack={["Ruby on Rails", "React", "JavaScript", "SQL", "GraphQL", "AWS", "Docker", "RSpec"]}
             />
             <TimelineCard
+                staggerIndex={1}
+                animateIn={sectionInView}
                 id="visiblebody"
                 image="/images/logo_visiblebody.png"
                 role="Full-Stack Developer"
@@ -49,6 +64,7 @@ function Experience() {
                 ]}
                 techStack={["Ruby on Rails", "JavaScript", "JQuery", "Python", "SQL", "AWS", "Capybara", "Selenium"]}
             />
+            </div>
         </TimelinePage>
     );
 }

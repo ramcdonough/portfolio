@@ -11,12 +11,15 @@ html, body, #root {
     background-color: theme('colors.dark');
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
+    font-family: "Lato", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 code {
@@ -38,4 +41,117 @@ code {
     max-height: 300px; /* Height when expanded */
     opacity: 1; /* Fully visible when expanded */
     overflow-y: auto;
+}
+
+/* Timeline card scroll-in: GPU-friendly CSS animation (no JS during animation) */
+.timeline-card {
+    opacity: 0;
+    transform: translateY(40px);
+    will-change: transform;
+}
+.timeline-card.timeline-card-visible {
+    animation: timeline-card-in 0.55s linear forwards;
+}
+.timeline-card.timeline-card-glow.timeline-card-visible {
+    animation: timeline-card-in 0.55s linear forwards, timeline-glow 2.5s ease-in-out 1s infinite;
+}
+@keyframes timeline-card-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Shiny sweep effect for hero name */
+.hero-name-wrap {
+    position: relative;
+    display: inline-block;
+}
+.hero-name-base {
+    color: theme('colors.primary');
+    position: relative;
+    z-index: 1;
+}
+.hero-name-shine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        105deg,
+        transparent 0%,
+        transparent 38%,
+        rgba(255, 255, 255, 0.35) 45%,
+        rgba(255, 255, 255, 0.7) 50%,
+        rgba(255, 255, 255, 0.35) 55%,
+        transparent 62%,
+        transparent 100%
+    );
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: name-shine 3.5s ease-in-out infinite;
+    z-index: 2;
+    pointer-events: none;
+}
+@keyframes name-shine {
+    0% { background-position: 220% 0; }
+    100% { background-position: -120% 0; }
+}
+
+/* Shifting gradient background — more visible, cooler motion */
+.bg-gradient-shift {
+    background:
+        linear-gradient(160deg, rgba(91, 163, 212, 0.14) 0%, transparent 40%, transparent 60%, rgba(107, 191, 155, 0.12) 100%),
+        linear-gradient(340deg, transparent 0%, rgba(228, 222, 202, 0.08) 25%, transparent 50%, rgba(91, 163, 212, 0.06) 75%, transparent 100%),
+        linear-gradient(70deg, rgba(107, 191, 155, 0.06) 0%, transparent 50%, rgba(228, 222, 202, 0.05) 100%);
+    background-size: 280% 280%, 320% 320%, 250% 250%;
+    animation: bg-shift 16s ease-in-out infinite;
+}
+@keyframes bg-shift {
+    0% { background-position: 0% 0%, 0% 0%, 0% 50%; }
+    33% { background-position: 100% 50%, 80% 100%, 100% 0%; }
+    66% { background-position: 50% 100%, 20% 0%, 50% 100%; }
+    100% { background-position: 0% 0%, 0% 0%, 0% 50%; }
+}
+
+/* Profile card: one-time enter animation on page load */
+@keyframes card-enter {
+    0% {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        transform: scale(0.97);
+        opacity: 0.9;
+    }
+    100% {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.card-breathe {
+    animation: card-enter 0.5s ease-out forwards;
+}
+
+@keyframes timeline-glow {
+    0%, 100% { border-left-color: rgba(91, 163, 212, 0.4); border-left-width: 4px; }
+    50% { border-left-color: rgba(91, 163, 212, 1); border-left-width: 5px; }
+}
+.timeline-card-glow.timeline-card-visible {
+    animation: timeline-card-in 0.55s linear forwards, timeline-glow 2.5s ease-in-out 1s infinite;
+}
+
+@keyframes subtitle-pulse {
+    0%, 100% {
+        opacity: 0.88;
+        text-shadow: 0 0 0 transparent;
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 20px rgba(228, 222, 202, 0.4);
+    }
+}
+.subtitle-pulse {
+    animation: subtitle-pulse 2.5s ease-in-out infinite;
 }
