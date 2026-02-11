@@ -18,9 +18,8 @@ function App() {
 
     return (
         <div className="min-h-screen flex flex-col bg-dark relative overflow-x-hidden">
-            {/* Slow-shifting gradient mesh — CSS only */}
             <div className="fixed inset-0 pointer-events-none z-0 bg-gradient-shift" aria-hidden />
-            <div className="fixed inset-0 pointer-events-none z-0 bg-gradient-to-b from-dark/70 via-transparent to-dark/60" aria-hidden />
+            <div className="fixed inset-0 pointer-events-none z-0 bg-gradient-to-b from-dark/55 via-transparent to-dark/50" aria-hidden />
             <Analytics />
             <Nav />
             <div className="flex-1 relative z-10">

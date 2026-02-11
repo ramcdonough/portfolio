@@ -47,7 +47,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
         <div
             ref={ref}
             id={id}
-            className={`timeline-card timeline-card-glow mb-6 bg-[#1a1a1a] rounded-xl border border-gray-700/30 overflow-hidden hover:border-accent/25 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-accent/5 border-l-4 border-l-accent/60 scroll-mt-24 ${shouldAnimate ? "timeline-card-visible" : ""}`}
+            className={`timeline-card timeline-card-glow mb-6 bg-[#1a1a1a] rounded-xl border border-gray-700/30 overflow-hidden hover:border-primary/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-black/20 border-l-4 border-l-primary/50 scroll-mt-24 ${shouldAnimate ? "timeline-card-visible" : ""}`}
             style={
                 shouldAnimate
                     ? { animationDelay: `${staggerIndex * STAGGER_DELAY_S}s` }
@@ -94,7 +94,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
                     <div className="space-y-1.5">
                         {description.map((item, index) => (
                             <div key={index} className="flex items-start gap-2 text-gray-300">
-                                <span className="text-accent text-xs mt-0.5 shrink-0">•</span>
+                                <span className="text-primary/90 text-xs mt-0.5 shrink-0">•</span>
                                 <p className="text-xs leading-relaxed min-w-0">{item}</p>
                             </div>
                         ))}
@@ -103,7 +103,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
                     {techStack && (
                         <div className="flex flex-wrap gap-2 mt-2">
                             {techStack.map((item, index) => (
-                                <span key={index} className="text-xs text-gray-400 bg-gray-800/80 hover:bg-accent/15 hover:text-accent px-2 py-1 rounded-md transition-colors duration-200">{item}</span>
+                                <span key={index} className="text-xs text-gray-400 bg-gray-800/80 hover:bg-primary/15 hover:text-primary px-2 py-1 rounded-md transition-colors duration-200">{item}</span>
                             ))}
                         </div>
                     )}

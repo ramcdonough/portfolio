@@ -62,81 +62,65 @@ code {
     }
 }
 
-/* Shiny sweep effect for hero name */
+/* Hero name: one-time shine confined to letter shapes (gradient clipped to text) */
 .hero-name-wrap {
     position: relative;
     display: inline-block;
 }
 .hero-name-base {
-    color: theme('colors.primary');
+    color: #E4DECA;
     position: relative;
     z-index: 1;
 }
+/* Same text as base; gradient only shows where letters are (background-clip: text) */
 .hero-name-shine {
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
+    font: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    /* Wide, full-white band so the shine is obvious in the letters */
     background: linear-gradient(
-        105deg,
+        90deg,
         transparent 0%,
-        transparent 38%,
-        rgba(255, 255, 255, 0.35) 45%,
-        rgba(255, 255, 255, 0.7) 50%,
-        rgba(255, 255, 255, 0.35) 55%,
-        transparent 62%,
+        transparent 28%,
+        rgba(255, 255, 255, 0.9) 35%,
+        rgba(255, 255, 255, 1) 40%,
+        rgba(255, 255, 255, 1) 60%,
+        rgba(255, 255, 255, 0.9) 65%,
+        transparent 72%,
         transparent 100%
     );
-    background-size: 220% 100%;
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
-    animation: name-shine 3.5s ease-in-out infinite;
-    z-index: 2;
     pointer-events: none;
+    z-index: 2;
+    animation: name-shine-once 0.9s ease-out 2.6s both;
 }
-@keyframes name-shine {
-    0% { background-position: 220% 0; }
-    100% { background-position: -120% 0; }
+@keyframes name-shine-once {
+    0% { background-position: 200% 0; }
+    100% { background-position: -100% 0; }
 }
 
-/* Shifting gradient background — more visible, cooler motion */
+/* Static background — hints of color, no animation (avoids latency) */
 .bg-gradient-shift {
     background:
-        linear-gradient(160deg, rgba(91, 163, 212, 0.14) 0%, transparent 40%, transparent 60%, rgba(107, 191, 155, 0.12) 100%),
-        linear-gradient(340deg, transparent 0%, rgba(228, 222, 202, 0.08) 25%, transparent 50%, rgba(91, 163, 212, 0.06) 75%, transparent 100%),
-        linear-gradient(70deg, rgba(107, 191, 155, 0.06) 0%, transparent 50%, rgba(228, 222, 202, 0.05) 100%);
-    background-size: 280% 280%, 320% 320%, 250% 250%;
-    animation: bg-shift 16s ease-in-out infinite;
-}
-@keyframes bg-shift {
-    0% { background-position: 0% 0%, 0% 0%, 0% 50%; }
-    33% { background-position: 100% 50%, 80% 100%, 100% 0%; }
-    66% { background-position: 50% 100%, 20% 0%, 50% 100%; }
-    100% { background-position: 0% 0%, 0% 0%, 0% 50%; }
-}
-
-/* Profile card: one-time enter animation on page load */
-@keyframes card-enter {
-    0% {
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-        transform: scale(0.97);
-        opacity: 0.9;
-    }
-    100% {
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-.card-breathe {
-    animation: card-enter 0.5s ease-out forwards;
+        radial-gradient(ellipse 120% 80% at 15% 25%, rgba(91, 163, 212, 0.16) 0%, transparent 50%),
+        radial-gradient(ellipse 100% 100% at 85% 75%, rgba(107, 191, 155, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 90% 110% at 50% 55%, rgba(228, 222, 202, 0.08) 0%, transparent 55%);
 }
 
 @keyframes timeline-glow {
-    0%, 100% { border-left-color: rgba(91, 163, 212, 0.4); border-left-width: 4px; }
-    50% { border-left-color: rgba(91, 163, 212, 1); border-left-width: 5px; }
+    0%, 100% { border-left-color: rgba(228, 222, 202, 0.4); border-left-width: 4px; }
+    50% { border-left-color: rgba(228, 222, 202, 0.85); border-left-width: 5px; }
 }
 .timeline-card-glow.timeline-card-visible {
     animation: timeline-card-in 0.55s linear forwards, timeline-glow 2.5s ease-in-out 1s infinite;
