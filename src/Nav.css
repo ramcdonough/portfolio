@@ -1,4 +1,5 @@
-.container {
+/* Hamburger icon wrapper only (avoid conflicting with layout .container) */
+#menu-button {
     display: inline-block;
     cursor: pointer;
 }
@@ -31,17 +32,19 @@
     background-color: #E4DECA;
 }
 
+/* Sticky nav: no background at top, translucent background once scrolled */
 .sticky-navbar {
-    position: sticky;
-    top: 0;
+    position: sticky !important;
+    top: 0 !important;
     z-index: 1000;
-    background-color: transparent;
+    background-color: transparent !important;
+    background-image: none !important;
     transition: background-color 0.25s ease, box-shadow 0.25s ease, backdrop-filter 0.25s ease;
     box-shadow: none;
 }
 
 .sticky-navbar.scrolled {
-    background-color: rgba(30, 30, 30, 0.85);
+    background-color: rgba(30, 30, 30, 0.82) !important;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);

@@ -55,7 +55,7 @@ export const Nav = () => {
             if (ticking) return;
             ticking = true;
             requestAnimationFrame(() => {
-                setIsScrolled(window.scrollY > 50);
+                setIsScrolled(window.scrollY > 20);
                 ticking = false;
             });
         };
@@ -78,7 +78,6 @@ export const Nav = () => {
                         aria-label="Open menu"
                     >
                         <div
-                            className="container"
                             id="menu-button"
                             onClick={toggleIcon}
                         >

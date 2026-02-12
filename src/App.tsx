@@ -17,12 +17,12 @@ function App() {
     }, [location]);
 
     return (
-        <div className="min-h-screen flex flex-col bg-dark relative overflow-x-hidden">
+        <div className="min-h-screen flex flex-col bg-dark relative">
             <div className="fixed inset-0 pointer-events-none z-0 bg-gradient-shift" aria-hidden />
             <div className="fixed inset-0 pointer-events-none z-0 bg-gradient-to-b from-dark/55 via-transparent to-dark/50" aria-hidden />
             <Analytics />
             <Nav />
-            <div className="flex-1 relative z-10">
+            <div className="flex-1 relative z-10 min-w-0 overflow-x-hidden">
                 <AnimatedRoutes />
             </div>
         </div>
