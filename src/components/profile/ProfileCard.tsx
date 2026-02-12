@@ -25,7 +25,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
     <div
         className={`group bg-white/5 backdrop-blur-sm rounded-xl border border-white/10
         md:hover:border-white/20 md:hover:bg-white/10 md:hover:shadow-lg
-        flex flex-col items-center h-fit max-md:border-accent/30 max-md:bg-white/10
+        flex flex-col items-center h-fit max-md:bg-white/10
         max-md:shadow-lg transform scale-100 md:hover:scale-[1.05] transition-all duration-100 ease-out ${link ? "cursor-pointer" : "cursor-default"}`}
         onClick={link ? () => navigate(link) : undefined}
     >

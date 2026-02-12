@@ -44,7 +44,7 @@ function Profile() {
     return (
         <div className="relative min-h-screen cursor-default">
             <div className="flex justify-center w-full cursor-default">
-                <div className="container relative w-full md:mt-28 md:w-2/3 px-4 py-2 md:p-5 text-center md:text-left text-primary font-sans cursor-default">
+                <div className="container relative w-full md:mt-8 md:w-2/3 px-4 py-2 md:p-5 text-center md:text-left text-primary font-sans cursor-default">
                     <FallingText
                         image="/images/avatar.jpg"
                         imagePlacement={imagePlacement}

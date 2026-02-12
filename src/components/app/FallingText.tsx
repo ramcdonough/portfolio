@@ -91,7 +91,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                 )}
                 {subtitle && (
                     <div
-                        className={`falling-text-subtitle subtitle-pulse flex flex-col text-lg lg:flex-row justify-center md:justify-start ${
+                        className={`text-primary/70 falling-text-subtitle subtitle-pulse flex flex-col text-lg lg:flex-row justify-center md:justify-start ${
                             body ? "font-semibold" : ""
                         }`}
                     >

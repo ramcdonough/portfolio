@@ -25,7 +25,7 @@ export const Socials: React.FC<SocialsProps> = ({
         <div className={`flex ${vertical ? "flex-col gap-32" : "gap-4"}`}>
             <a
                 className="btn-ghost btn flex h-auto p-2 hover:scale-110 transition-transform"
-                href="https://www.linkedin.com/in/ryan-mcdonough2/"
+                href="https://www.linkedin.com/in/rmcdonough"
                 target="_blank"
                 rel="noopener noreferrer"
             >

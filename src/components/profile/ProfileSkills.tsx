@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { LANGUAGES, FRAMEWORKS, TOOLS } from "./ProfileData";
 
 const sectionVariant = {
     hidden: { opacity: 0, y: 20 },
@@ -19,10 +20,7 @@ const itemVariant = {
     hidden: { opacity: 0, y: 8 },
     visible: { opacity: 1, y: 0 },
 };
-
-const LANGUAGES = ["JavaScript", "TypeScript", "Ruby", "Python", "SQL", "HTML", "CSS"];
-const FRAMEWORKS = ["React", "Next.js", "Tailwind", "Bootstrap", "DaisyUI", "Material UI", "Chakra UI"];
-
+  
 export default function ProfileSkills() {
     return (
         <>
@@ -50,6 +48,23 @@ export default function ProfileSkills() {
                     className="flex flex-wrap gap-2 list-none p-0 m-0 justify-center md:justify-start"
                 >
                     {FRAMEWORKS.map((skill) => (
+                        <motion.li
+                            key={skill}
+                            variants={itemVariant}
+                            className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-primary/90 text-sm"
+                        >
+                            {skill}
+                        </motion.li>
+                    ))}
+                </motion.ul>
+            </motion.div>
+            <motion.div variants={sectionVariant} className="space-y-3">
+                <h3 className="text-sm font-semibold text-primary/70 uppercase tracking-wider">Tools</h3>
+                <motion.ul
+                    variants={listVariant}
+                    className="flex flex-wrap gap-2 list-none p-0 m-0 justify-center md:justify-start"
+                >
+                    {TOOLS.map((skill) => (
                         <motion.li
                             key={skill}
                             variants={itemVariant}
